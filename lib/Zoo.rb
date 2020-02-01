@@ -20,15 +20,15 @@ class Zoo
   end
 
   def animal_species
-    @@all.map { |animal| animal.species }.uniq
+    animals.map { |animal| animal.species }.uniq
   end
 
   def find_by_species(species)
-    self.animals.map { |animal| animal.species }.uniq
+    animals.select { |animal| animal.species == species }.uniq
   end
 
   def animal_nicknames
-    self.animals.map { |animal| animal.nickname }
+    animals.map { |animal| animal.nickname }
   end
 
   def self.find_by_location(location)
